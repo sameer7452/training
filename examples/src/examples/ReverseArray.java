@@ -6,7 +6,7 @@ public class ReverseArray {
 
 	public static void main(String[] args) {
 		int A[]= {4,2,7,3,6,9,1,8};
-		int b[];
+		int b[]= {};
 		int j=0;
 		System.out.println(Arrays.toString(A));
 		

@@ -51,7 +51,7 @@ public class FirstStreamDemo {
 		
 		IntStream istr2=IntStream.of(5,7,9,8,3,2);
 		
-		IntSummaryStatistics statics=istr.summaryStatistics();
+		IntSummaryStatistics statics=istr2.summaryStatistics();
 		System.out.println(statics);
 		
 		

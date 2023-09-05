@@ -37,7 +37,7 @@ private static AlbumDaoImplementation dao;
     private static void findArt() {
         Scanner console=new Scanner(System.in);
         System.out.println("Enter Song artist: ");
-        String art=console.next();
+        String art=console.nextLine();
         System.out.println(dao.findByArtist(art));
     }
     private static void findTitle() throws InvalidAlbumException {

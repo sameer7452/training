@@ -14,7 +14,7 @@ public class MapStreamDemo {
 		people.put("mili","Mumbai");
 		people.put("deni","Delhi");
 		
-		people.values().stream().forEach(System.out::println);
+		people.keySet().stream().forEach(System.out::println);
 		
 		List<String> cities=people.values().stream().map(c->c.toUpperCase()).sorted().collect(Collectors.toList());
 		cities.forEach(System.out::println);

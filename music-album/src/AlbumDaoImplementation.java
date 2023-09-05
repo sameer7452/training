@@ -32,7 +32,8 @@ private List<Album> albums;
 
 	@Override
 	public List<Album> findByTitle(String title) throws InvalidAlbumException {
-		return albums.stream().filter(p -> p.getTitle().equalsIgnoreCase(title)).collect(Collectors.toList());
+		//return albums.stream().filter(p -> p.getTitle().equalsIgnoreCase(title)).collect(Collectors.toList());
+		return albums.stream().filter(p->p.getTitle().equals(title)).collect(Collectors.toList());
 	}
 
 	@Override
@@ -52,11 +53,12 @@ private List<Album> albums;
 
 	@Override
 	public boolean update(Album a) {
-		if (albums.add(a)) {
-			albums.add(a);
+		if (albums.stream().anyMatch(p->p.getTitle().equals(a.getTitle()))) {
+			albums = albums.stream().map(e->{e.setGenre(e.getGenre()); return e;}).collect(Collectors.toList());
 			return true;
 		}
-		return false;
+		else
+		   return false;
 	}
 
 	@Override
